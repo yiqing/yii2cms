@@ -31,4 +31,5 @@ return [
         ],
     ],
     'params' => $params,
+    'defaultRoute' => 'entry/login'
 ];

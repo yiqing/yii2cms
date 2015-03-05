@@ -32,12 +32,12 @@ class SiteController extends Controller
                     ],
                 ],
             ],
-            'verbs' => [
+           /* 'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
                     'logout' => ['post'],
                 ],
-            ],
+            ],*/
         ];
     }
 
@@ -55,7 +55,7 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-        return $this->render('index');
+        //return $this->render('index');
     }
 
     public function actionLogin()
