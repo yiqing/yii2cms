@@ -7,7 +7,7 @@
                 <img src="/static/img/avatar3.png" class="img-circle" alt="User Image" />
             </div>
             <div class="pull-left info">
-                <p>Hello, Jane</p>
+                <p>Hello, <?= Yii::$app->user->identity->username?> </p>
 
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
@@ -53,6 +53,8 @@
                     <i class="fa fa-th"></i> <span>文章</span>
                 </a>
             </li>
+
+
         </ul>
     </section>
     <!-- /.sidebar -->

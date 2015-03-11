@@ -16,6 +16,7 @@ class AdminAsset extends AssetBundle
         'static/css/AdminLTE.css',
     ];
     public $js = [
+        'static/js/bootstrap.min.js',
         'static/js/AdminLTE/app.js',
         'static/js/AdminLTE/demo.js',
     ];

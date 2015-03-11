@@ -44,7 +44,7 @@ class CategoryController extends BaseController
             <td>
                 <a href='/category/create?id=\$id'>添加子类</a> |
                 <a href='/category/update?id=\$id'>更新</a> |
-                <a href='/category/delete?id=\$id'>删除</a> | 
+                <a href='/category/delete?id=\$id'>删除</a> |
                 <a href='/article/index?id=\$id'>内容管理</a>
             </td>
         </tr>

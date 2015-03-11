@@ -15,7 +15,7 @@ class m150307_084149_create_category_table extends Migration
 
         $this->createTable('{{%category}}', [
             'id' => Schema::TYPE_PK,
-            'pid' => Schema::TYPE_INTEGER . ' NOT NULL',
+            'parentid' => Schema::TYPE_INTEGER . ' NOT NULL',
             'cname' => Schema::TYPE_STRING . '(32) NOT NULL',
 
             'status' => Schema::TYPE_SMALLINT . ' NOT NULL DEFAULT 10',
