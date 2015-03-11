@@ -1,0 +1,4 @@
+D:\www\yii2cms\vendor\yiisoft\yii2\grid\GridView.php
+注释了238行
+D:\www\yii2cms\vendor\yiisoft\yii2\grid\GridViewAsset.php
+注释了22,25

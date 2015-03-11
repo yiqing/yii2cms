@@ -1,5 +1,5 @@
 <?php
-use backend\assets\AppAsset;
+use backend\assets\AdminAsset;
 use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
@@ -7,23 +7,18 @@ use yii\widgets\Breadcrumbs;
 
 /* @var $this \yii\web\View */
 /* @var $content string */
-
+AdminAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>AdminLTE | Dashboard</title>
+    <title><?= Html::encode($this->title) ?></title>
+    <?php $this->head() ?>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- bootstrap 3.0.2 -->
-    <link href="/static/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <!-- font Awesome -->
-    <link href="/static/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-    <!-- Ionicons -->
-    <link href="/static/css/ionicons.min.css" rel="stylesheet" type="text/css" />
-    <!-- Theme style -->
-    <link href="/static/css/AdminLTE.css" rel="stylesheet" type="text/css" />
+
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -68,15 +63,6 @@ use yii\widgets\Breadcrumbs;
     </aside><!-- /.right-side -->
 </div><!-- ./wrapper -->
 
-
-<!-- jQuery 2.0.2 -->
-<script src="/static/js/jquery.min.js"></script>
-<!-- Bootstrap -->
-<script src="/static/js/bootstrap.min.js" type="text/javascript"></script>
-<!-- AdminLTE App -->
-<script src="/static/js/AdminLTE/app.js" type="text/javascript"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="/static/js/AdminLTE/demo.js" type="text/javascript"></script>
 <?php $this->endBody() ?>
 </body>
 </html>
