@@ -32,7 +32,7 @@ class m150307_085438_create_article_table extends Migration
         $this->createIndex('article_category_id_index', '{{%article}}', 'category_id');
 
         if ($this->db->driverName === 'mysql') {
-            $this->addForeignKey('category_article_f', '{{%category}}', 'id', '{{%article}}', 'category_id','CASCADE');
+           // $this->addForeignKey('category_article_f', '{{%category}}', 'id', '{{%article}}', 'category_id','CASCADE');
             $this->addForeignKey('article_category_f', '{{%article}}', 'category_id', '{{%category}}', 'id','CASCADE');
 
         }

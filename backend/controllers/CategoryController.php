@@ -83,7 +83,7 @@ Eof;
         $model = new Category();
         $model->created_at = time();
         $model->updated_at = time();
-        $model->parentid = $request->get('id');
+        $model->parentid = $request->get('id')?$request->get('id'):0;
 
         if ($model->load($request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
