@@ -17,13 +17,7 @@ use yii\widgets\Ueditor;
 
     <?= $form->field($model, 'title')->textInput(['maxlength' => 255]) ?>
 
-    <?= $form->field($model, 'slug')->textInput(['maxlength' => 255]) ?>
-
-    <?= $form->field($model, 'content')->textarea(['rows' => 6]) ?>
-
-    <?= Ueditor::widget(['model'=>$model,'name'=>'miaoshu'])?>
-
-    <script id="editor" name="Article['miaoshu']" type="text/plain" style="width:1024px;height:500px;"></script>
+    <?= Ueditor::widget(['model'=>$model,'name'=>'content'])?>
 
     <?= ImageUpload::widget(['model'=>$model,'attribute'=>'file'])?>
 

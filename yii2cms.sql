@@ -35,12 +35,14 @@ CREATE TABLE `article` (
   `meta_keywords` varchar(255) DEFAULT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
+  `file` varchar(255) DEFAULT NULL,
+  `miaoshu` text,
   PRIMARY KEY (`id`),
   UNIQUE KEY `article_title_unique` (`title`),
   UNIQUE KEY `article_slug_unique` (`slug`),
   KEY `article_category_id_index` (`category_id`),
   CONSTRAINT `article_category_f` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -49,7 +51,7 @@ CREATE TABLE `article` (
 
 LOCK TABLES `article` WRITE;
 /*!40000 ALTER TABLE `article` DISABLE KEYS */;
-INSERT INTO `article` VALUES (1,1,1,'文章1','122','3344',0,'','','','2015-03-11 17:25:38','2015-03-11 17:25:38');
+INSERT INTO `article` VALUES (1,1,1,'文章1','122','3344',0,'','','','2015-03-11 17:25:38','2015-03-11 17:25:38','/uploads/images/73CC5B88789C.jpg','<p>2222</p>'),(2,1,1,'4556','6677','77888',0,'','','','2015-03-13 06:55:19','2015-03-13 06:55:19',NULL,NULL),(3,1,1,'334','5566','5777',0,'','','','2015-03-13 17:57:53','2015-03-13 17:57:53',NULL,'<p>dfgyy<img src=\"/ueditor/php/upload/image/20150313/1426246008271917.jpg\" title=\"1426246008271917.jpg\" alt=\"Penguins.jpg\"/></p>'),(4,1,1,'阿萨德的','344','677889',0,'','','','2015-03-14 19:30:30','2015-03-14 19:30:30','/uploads/images/Hydrangeas.jpg','<p>反复各环节<img src=\"/ueditor/php/upload/image/20150314/1426332627502482.jpg\" title=\"1426332627502482.jpg\" alt=\"Penguins.jpg\"/></p>'),(5,1,1,'123','444','rrrtt',0,'','','','2015-03-15 09:59:14','2015-03-15 09:59:14','/uploads/images/Koala.jpg','<p>ffgg</p>'),(6,1,1,'asd','ffgg','ghhh',0,'','','','2015-03-15 10:02:13','2015-03-15 10:02:13','/uploads/images/Chrysanthemum.jpg','<p>hhhj</p>'),(7,1,1,'123666','556','3344',0,'','','','2015-03-15 10:34:38','2015-03-15 10:34:38','/uploads/images/Hardware003.jpg','<p>666</p>'),(8,1,1,'adrr','tyyuu','yyyy',0,'','','','2015-03-15 10:38:49','2015-03-15 10:38:49','/uploads/images/Chrysanthemum.jpg','<p>yuuyt</p>'),(9,1,1,'asd334','fgg','ertt',0,'','','','2015-03-15 12:12:29','2015-03-15 12:12:29','/uploads/images/png-1009.png','<p>rty</p>'),(10,1,1,'美女1','1223444','为二人',0,'','','','2015-03-16 12:05:47','2015-03-16 12:05:47','/uploads/images/7CA8FE0BFA0A(1).jpg','<p>2334</p>');
 /*!40000 ALTER TABLE `article` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -82,6 +84,33 @@ INSERT INTO `category` VALUES (1,0,'分类1',10,122,334),(4,0,'分类2',10,14260
 UNLOCK TABLES;
 
 --
+-- Table structure for table `image`
+--
+
+DROP TABLE IF EXISTS `image`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `image` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `filePath` varchar(400) NOT NULL,
+  `itemId` int(20) NOT NULL,
+  `isMain` int(1) DEFAULT NULL,
+  `modelName` varchar(150) NOT NULL,
+  `urlAlias` varchar(400) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `image`
+--
+
+LOCK TABLES `image` WRITE;
+/*!40000 ALTER TABLE `image` DISABLE KEYS */;
+/*!40000 ALTER TABLE `image` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `migration`
 --
 
@@ -101,7 +130,7 @@ CREATE TABLE `migration` (
 
 LOCK TABLES `migration` WRITE;
 /*!40000 ALTER TABLE `migration` DISABLE KEYS */;
-INSERT INTO `migration` VALUES ('m000000_000000_base',1426062076),('m130524_201442_init',1426062079),('m150216_075514_create_news_table',1426062079),('m150307_071228_test',1426062079),('m150307_080300_add_classname_col_to_testtable',1426062080),('m150307_084149_create_category_table',1426062080),('m150307_085438_create_article_table',1426062082);
+INSERT INTO `migration` VALUES ('m000000_000000_base',1426062076),('m130524_201442_init',1426062079),('m140622_111540_create_image_table',1426248613),('m150216_075514_create_news_table',1426062079),('m150307_071228_test',1426062079),('m150307_080300_add_classname_col_to_testtable',1426062080),('m150307_084149_create_category_table',1426062080),('m150307_085438_create_article_table',1426062082);
 /*!40000 ALTER TABLE `migration` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -206,4 +235,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-03-11 19:26:03
+-- Dump completed on 2015-03-16 21:45:40
