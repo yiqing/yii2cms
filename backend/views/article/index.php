@@ -35,6 +35,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <tr>
         <td><?= $v['id']?></td><td><?= $v['category_id']?></td><td><?= $v['title']?></td><td><?= $v['id']?></td><td><?= $v['created_at']?></td>
         <td>
+            <a href="/article/view?id=<?= $v['id']?>" >查看</a> |
             <a href="/article/update?id=<?= $v['id']?>" >更新</a> |
             <a href="/article/delete">删除</a>
         </td>

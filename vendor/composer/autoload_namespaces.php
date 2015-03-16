@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'abeautifulsite' => array($vendorDir . '/abeautifulsite/simpleimage/src'),
     'Twig_' => array($vendorDir . '/twig/twig/lib'),
     'HTMLPurifier' => array($vendorDir . '/ezyang/htmlpurifier/library'),
     'Faker\\PHPUnit' => array($vendorDir . '/fzaninotto/faker/test'),

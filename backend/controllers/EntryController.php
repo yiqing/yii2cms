@@ -23,11 +23,11 @@ class EntryController extends Controller
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['login', 'error'],
+                        'actions' => ['login', 'error','login2'],
                         'allow' => true,
                     ],
                     [
-                        'actions' => ['logout', 'index'],
+                        'actions' => ['logout', 'index','login2'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -62,19 +62,36 @@ class EntryController extends Controller
     public function actionLogin()
     {
         if (!\Yii::$app->user->isGuest) {
-            
             return $this->redirect('sys/dashboard');
         }
-
         $model = new LoginForm();
-        if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->goBack();
-            
-        } else {
-            return $this->renderPartial('login', [
-                'model' => $model,
-            ]);
+        if (Yii::$app->request->isAjax && $model->load(Yii::$app->request->post()))
+        {
+            $response = Yii::$app->response;
+            $response->format = \yii\web\Response::FORMAT_JSON;
+            if(!$model->validate())
+            {
+                foreach($model->getErrors() as $errors)
+                {
+                    foreach($errors as $error)
+                    {
+                        return [
+                            'msg'=>$error,
+                            'status'=>1
+                        ];
+                    }
+                }
+            }else{
+                $model->login();
+                return [
+                    'msg' => '登陆成功',
+                    'status' => 0
+                ];
+            }
         }
+        return $this->renderPartial('login', [
+            'model' => $model,
+        ]);
     }
 
     public function actionLogout()

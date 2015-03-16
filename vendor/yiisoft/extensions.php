@@ -93,6 +93,15 @@ return array (
       '@creocoder/nestedsets' => $vendorDir . '/creocoder/yii2-nested-sets/src',
     ),
   ),
+  'costa-rico/yii2-images' => 
+  array (
+    'name' => 'costa-rico/yii2-images',
+    'version' => '9999999-dev',
+    'alias' => 
+    array (
+      '@rico/yii2images' => $vendorDir . '/costa-rico/yii2-images',
+    ),
+  ),
   'kartik-v/yii2-tree-manager' => 
   array (
     'name' => 'kartik-v/yii2-tree-manager',

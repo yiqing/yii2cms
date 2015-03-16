@@ -9,6 +9,7 @@ use common\models\ArticleSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use \Aliyun\OSS\OSSClient;
 
 /**
  * ArticleController implements the CRUD actions for Article model.
@@ -56,8 +57,22 @@ class ArticleController extends BaseController
      */
     public function actionView($id)
     {
+        //require_once Yii::getAlias('@vendor/johnlui/aliyun-oss/oss/aliyun.php');
+        require_once Yii::getAlias('@vendor/aliyun/aliyun.php');
+        $client = OSSClient::factory(array(
+            'AccessKeyId' => 'EKsdkziqEfwr4IBm',
+            'AccessKeySecret' => 'QgZ4AILAZSXhO9qGwT0kVwScpBnJO8',
+        ));
+        $objectListing = $client->listObjects(array(
+            'Bucket' => 'yiipic',
+        ));
+        $pics='';
+        foreach ($objectListing->getObjectSummarys() as $objectSummary) {
+            $pics.= "<img src='http://yiipic.xiuyun99.com/".$objectSummary->getKey()."@100w_100h_90Q.png' />";
+        }
         return $this->render('view', [
             'model' => $this->findModel($id),
+            'pics'=>$pics
         ]);
     }
 

@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2c7a0d7ea631c6daefd43d01652cb763",
+    "hash": "ae306ce9156913b9cb4bc3b2db23466c",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -660,6 +660,66 @@
     ],
     "packages-dev": [
         {
+            "name": "abeautifulsite/simpleimage",
+            "version": "2.5.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/claviska/SimpleImage.git",
+                "reference": "9ce9764c8a9119a0c2b02c0c4ad43c3d18b08c9f",
+                "mirrors": [
+                    {
+                        "url": "/%package%/%normalizedUrl%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/claviska/SimpleImage/zipball/9ce9764c8a9119a0c2b02c0c4ad43c3d18b08c9f",
+                "reference": "9ce9764c8a9119a0c2b02c0c4ad43c3d18b08c9f",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "http://pkg.phpcomposer.com/repo/packagist/dists/%package%/%version%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.5-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "abeautifulsite": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nazar Mokrynskyi",
+                    "email": "nazar@mokrynskyi.com",
+                    "homepage": "http://cleverstyle.org/",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Cory LaViska",
+                    "homepage": "http://www.abeautifulsite.net/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A PHP class that simplifies working with images",
+            "time": "2015-03-12 00:46:30"
+        },
+        {
             "name": "bower-asset/typeahead.js",
             "version": "v0.10.5",
             "source": {
@@ -685,6 +745,72 @@
             "extra": {
                 "bower-asset-main": "dist/typeahead.bundle.js"
             }
+        },
+        {
+            "name": "costa-rico/yii2-images",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/CostaRico/yii2-images.git",
+                "reference": "547e96406725a71deef4ec98495b715541a7fbbd",
+                "mirrors": [
+                    {
+                        "url": "/%package%/%normalizedUrl%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/CostaRico/yii2-images/zipball/547e96406725a71deef4ec98495b715541a7fbbd",
+                "reference": "547e96406725a71deef4ec98495b715541a7fbbd",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "http://pkg.phpcomposer.com/repo/packagist/dists/%package%/%version%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "abeautifulsite/simpleimage": "*",
+                "yiisoft/yii2": "*"
+            },
+            "require-dev": {
+                "codeception/specify": "*",
+                "codeception/verify": "*",
+                "mikey179/vfsstream": "1.3.*@dev",
+                "yiisoft/yii2-codeception": "*"
+            },
+            "suggest": {
+                "ext-imagick": ""
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "rico\\yii2images\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Costa Rico",
+                    "email": "zetogo@gmail.com"
+                }
+            ],
+            "description": "yii2 images module for storing images",
+            "keywords": [
+                "Costa Rico",
+                "images",
+                "images store",
+                "store",
+                "yii2",
+                "yii2-images"
+            ],
+            "time": "2015-01-28 09:33:48"
         },
         {
             "name": "creocoder/yii2-nested-sets",
@@ -787,6 +913,60 @@
             "time": "2014-06-04 14:43:02"
         },
         {
+            "name": "johnlui/aliyun-oss",
+            "version": "v1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/johnlui/AliyunOSS.git",
+                "reference": "72d8f7afade144b636609b1a3fd76f36abacdc6f",
+                "mirrors": [
+                    {
+                        "url": "/%package%/%normalizedUrl%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/johnlui/AliyunOSS/zipball/72d8f7afade144b636609b1a3fd76f36abacdc6f",
+                "reference": "72d8f7afade144b636609b1a3fd76f36abacdc6f",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "http://pkg.phpcomposer.com/repo/packagist/dists/%package%/%version%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "JohnLui\\AliyunOSS\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "John Lui",
+                    "email": "wenhanlv@gmail.com"
+                }
+            ],
+            "description": "阿里云 OSS 官方 SDK 的 Composer 封装，支持任何 PHP 项目，包括 Laravel、Symfony、TinyLara 等等。",
+            "homepage": "https://github.com/johnlui/AliyunOSS",
+            "keywords": [
+                "AliyunOSS",
+                "aliyun",
+                "oss"
+            ],
+            "time": "2015-01-12 05:17:06"
+        },
+        {
             "name": "kartik-v/yii2-krajee-base",
             "version": "v1.7.4",
             "source": {
@@ -850,7 +1030,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/yii2-tree-manager.git",
-                "reference": "8605ba3cbecffc0f302ff6a8a981f52522442476",
+                "reference": "fd7cc996db05dd33330f829e5d630ff8f29c5845",
                 "mirrors": [
                     {
                         "url": "/%package%/%normalizedUrl%.%type%",
@@ -860,8 +1040,8 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/yii2-tree-manager/zipball/8605ba3cbecffc0f302ff6a8a981f52522442476",
-                "reference": "8605ba3cbecffc0f302ff6a8a981f52522442476",
+                "url": "https://api.github.com/repos/kartik-v/yii2-tree-manager/zipball/fd7cc996db05dd33330f829e5d630ff8f29c5845",
+                "reference": "fd7cc996db05dd33330f829e5d630ff8f29c5845",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -906,7 +1086,7 @@
                 "tree",
                 "treeview"
             ],
-            "time": "2015-03-04 09:19:33"
+            "time": "2015-03-13 19:19:19"
         },
         {
             "name": "kartik-v/yii2-widget-activeform",
@@ -1357,7 +1537,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "kartik-v/yii2-tree-manager": 20
+        "kartik-v/yii2-tree-manager": 20,
+        "costa-rico/yii2-images": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

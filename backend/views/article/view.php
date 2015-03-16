@@ -40,7 +40,9 @@ $this->params['breadcrumbs'][] = $this->title;
             'meta_keywords',
             'created_at',
             'updated_at',
+            'miaoshu',
         ],
     ]) ?>
 
 </div>
+<?= $pics?>

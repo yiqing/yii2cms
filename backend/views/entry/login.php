@@ -1,5 +1,6 @@
 <?php
-use yii\helpers\Html;
+
+use yii\helpers\Url;
 use yii\bootstrap\ActiveForm;
 
 /* @var $this yii\web\View */
@@ -21,6 +22,7 @@ $this->title = 'Login';
     <link href="/static/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
     <!-- Theme style -->
     <link href="/static/css/AdminLTE.css" rel="stylesheet" type="text/css" />
+    <link href="/yxsss/js_css/yu.css" rel="stylesheet" type="text/css" />
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -32,9 +34,10 @@ $this->title = 'Login';
 <body class="bg-black">
 
 <div class="form-box" id="login-box">
-    <div class="header">Sign In</div>
-    <form action="" method="post">
-        <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
+    <div class="header">后台入口</div>
+
+        <?php $form = ActiveForm::begin(['id' => 'myForm']); ?>
+
         <div class="body bg-gray">
             <div class="form-group">
                 <input type="text" name="LoginForm[username]" class="form-control" placeholder="username"/>
@@ -47,7 +50,10 @@ $this->title = 'Login';
             </div>
         </div>
         <div class="footer">
-            <button type="submit" class="btn bg-olive btn-block">Sign me in</button>
+           <!-- <button type="submit" class="btn bg-olive btn-block">Sign me in</button>-->
+            <button class="btn bg-olive btn-block"onclick="save()">
+                <span class="button-content" >登陆</span>
+            </button>
 
             <p><a href="#">I forgot my password</a></p>
 
@@ -67,9 +73,25 @@ $this->title = 'Login';
 
 
 <!-- jQuery 2.0.2 -->
-<script src="/static/js/jquery.min.js"></script>
+<script src="/js/jquery.js"></script>
 <!-- Bootstrap -->
 <script src="/static/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="/js/jquery.form.js" type="text/javascript"></script>
+
+<script src="/yxsss/js_css/yu.js" type="text/javascript"></script>
+<script type="text/javascript">
+    function save() {
+        $('#myForm').ajaxForm(function(data){
+            if(data.status==1){
+                ui.error(data.msg,1000);
+            }
+            else{
+                ui.success(data.msg,1000);
+               window.location.href = '<?= Url::toRoute('sys/dashboard')?>'
+            }
+        })
+    }
+</script>
 
 </body>
 </html>

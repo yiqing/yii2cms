@@ -19,6 +19,8 @@ use Yii;
  * @property string $meta_keywords
  * @property string $created_at
  * @property string $updated_at
+ * @property string $file
+ * @property string $miaoshu
  *
  * @property Category $category
  */
@@ -39,12 +41,10 @@ class Article extends \yii\db\ActiveRecord
     {
         return [
             [['category_id', 'user_id', 'comments_count'], 'integer'],
-            [['user_id', 'title', 'slug', 'content', 'created_at', 'updated_at'], 'required'],
+            [['user_id', 'title', 'slug', 'content', 'created_at', 'updated_at','file','miaoshu'], 'required'],
             [['content'], 'string'],
             [['created_at', 'updated_at'], 'safe'],
             [['title', 'slug', 'meta_title', 'meta_description', 'meta_keywords'], 'string', 'max' => 255],
-            [['title'], 'unique'],
-            [['slug'], 'unique']
         ];
     }
 
@@ -66,6 +66,8 @@ class Article extends \yii\db\ActiveRecord
             'meta_keywords' => Yii::t('app', 'Meta Keywords'),
             'created_at' => Yii::t('app', 'Created At'),
             'updated_at' => Yii::t('app', 'Updated At'),
+            'miaoshu' => Yii::t('app', 'Miaoshu'),
+
         ];
     }
 
