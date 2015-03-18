@@ -32,9 +32,11 @@ class CategoryController extends BaseController
      */
     public function actionIndex()
     {
+        $cache = Yii::$app->cache;
+        $categoryList = $cache['categorys'];
+        //$searchModel = new CategorySearch();
+        //$categoryList = $searchModel->categoryList();
         $tree = new tree();
-        $searchModel = new CategorySearch();
-        $categoryList = $searchModel->categoryList();
         $tree->init($categoryList);
 
         $str=<<<Eof
@@ -86,12 +88,22 @@ Eof;
         $model->parentid = $request->get('id')?$request->get('id'):0;
 
         if ($model->load($request->post()) && $model->save()) {
+            $this->cacheAction();
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
                 'model' => $model,
             ]);
         }
+    }
+
+    public function cacheAction()
+    {
+        $searchModel = new CategorySearch();
+        $categoryList = $searchModel->categoryList();
+        $cache = Yii::$app->cache;
+        $cache['categorys'] = $categoryList;
+
     }
 
     /**
@@ -105,6 +117,7 @@ Eof;
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            $this->cacheAction();
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [
@@ -122,7 +135,7 @@ Eof;
     public function actionDelete($id)
     {
         $this->findModel($id)->delete();
-
+        $this->cacheAction();
         return $this->redirect(['index']);
     }
 
